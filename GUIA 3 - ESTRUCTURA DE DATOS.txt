@@ -1,0 +1,259 @@
+//*GUIA N°3 - Ejercicios C#*/
+
+/*EJERICIO 01 - Crea una función llamada "Signo", que reciba un número real, y devuelva un
+número entero con el valor: -1 si el número es negativo, 1 si es positivo o 0 si es cero.*/
+/*
+using System;
+    
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un número:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Signo(n1); 
+        }
+        static void Signo(int n1)
+        {
+            if (n1 > 0)
+            {
+                Console.WriteLine("1");
+            }
+            else if (n1 < 0)
+            {
+                Console.WriteLine("-1");
+            }
+            else
+            {
+                Console.WriteLine("0");
+            }
+        }
+
+    }
+}
+*/
+
+/*EJERICIO 02 - Crea una función "Menor" que calcule el menor de dos números enteros que
+recibirá como parámetros. El resultado será otro número entero.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese el primer número:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo número:");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            Menor(n1,n2);
+        }
+        static void Menor(int n1, int n2)
+        {
+            if (n1 < n2)
+            {
+                Console.WriteLine("El menor es {0}", n1);
+            }
+            else
+            {
+                Console.WriteLine("El menor es {0}", n2);
+            }
+        }
+
+    }
+}
+*/
+
+/*EJERICIO 03 - Crea una función "EsPrimo", que reciba un número y devuelva el valor
+booleano "true" si es un número primo o "false" en caso contrario.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un número:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            EsPrimo(n1);
+        }
+        public static void EsPrimo(int n1)
+        {
+            for (int i = 2; i < n1; i++)
+            {
+                if (n1 % i == 0)
+                {
+                    Console.WriteLine(false);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine(true);
+                    break;
+                }
+            }
+        }
+
+    }
+}
+*/
+
+/*EJERICIO 04 - Analice el código ¿Qué hace este código? Realizar captura de pantalla del
+código con su resultado y análisis del mismo.*/
+/*
+using System;
+class Program
+    {
+    static void Main(string[] args)
+    {
+        Console.Clear();
+        for (int fila=1; fila<=7; fila ++)
+        {
+            for (int espacios = 7 - fila; espacios > 0; espacios--)
+                Console.Write(" ");
+            for (int conta = 1; conta < (2 * fila); conta++)
+                Console.Write("*");
+
+            Console.WriteLine(" ");
+        }
+    
+    }
+}
+*/
+
+/*EJERICIO 05 - Crea una calculadora básica, llamada "calcula", que deberá sumar, restar,
+multiplicar o dividir los dos números que se le indiquen como parámetros. Ejemplos de
+su uso sería "calcula 2 + 3" o "calcula 5 * 60". (Utilice Funciones)*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese el primer número:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el segundo número:");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Seleccione la operación que desea realizar:");
+            Console.WriteLine("1) SUMAR");
+            Console.WriteLine("2) RESTAR");
+            Console.WriteLine("3) DIVIDIR");
+            Console.WriteLine("4) MULTIPLICAR");
+            int operacion = Convert.ToInt32(Console.ReadLine());
+
+            Calcula(n1, n2, operacion);
+        }
+        public static void Calcula(int n1, int n2, int operacion)
+        {
+            switch (operacion)
+            {
+                case 1:
+                    Console.WriteLine("{0} + {1} = {2}", n1, n2, n1 + n2);
+                    break;
+
+                case 2:
+                    Console.WriteLine("{0} - {1} = {2}", n1, n2, n1 - n2);
+                    break;
+
+                case 3:
+                    Console.WriteLine("{0} / {1} = {2}", n1, n2, n1 / n2);
+                    break;
+
+                case 4:
+                    Console.WriteLine("{0} * {1} = {2}", n1, n2, n1 * n2);
+                    break;
+            }
+        }
+    }
+}
+*/
+
+/*EJERICIO 06 - Crea una función "SumaCifras" que reciba un numero cualquiera y que
+devuelva como resultado la suma de sus dígitos. Por ejemplo, si el número fuera 123 la
+suma sería 6.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un número:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            SumaCrifras(n1);
+        }
+        public static void SumaCrifras(int n1)
+        {
+            if (n1 >= 10 && n1 <= 99)
+            {
+                int primercifra = n1 / 10;
+                int segundacifra = n1 % 10;
+                int resultado = primercifra + segundacifra;
+                Console.WriteLine("La suma de la primer cifra: {0} y la segunda: {1} es : {2}", primercifra, segundacifra, resultado);
+            }
+            else if (n1 >= 100 && n1 <= 999)
+            {
+                int primercifra = n1 / 100;
+                int segundacifra = (n1 % 100) / 10;
+                int tercercifra = n1 % 10;
+                Console.WriteLine("La suma de la primer de las cifras es: {0}", primercifra + segundacifra + tercercifra);
+            }
+            else if (n1 >= 1000 && n1 <= 9999)
+            {
+                int primercifra = n1 / 1000;
+                int segundacifra = (n1 / 100) % 10;
+                int tercercifra = (n1 % 100) / 10;
+                int cuartacifra = n1 % 10;
+                Console.WriteLine("La suma de la primer de las cifras es: {0}", primercifra + segundacifra + tercercifra + cuartacifra);
+            }
+
+        }
+    }
+}
+*/
+
+/*EJERICIO 07 - Crea una función "Triángulo" que reciba una letra y un número, y
+escriba un "triángulo" formado por esa letra, que tenga como anchura inicial la que se
+ha indicado.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un numero:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Triangulo(n1);
+        }
+        public static void Triangulo(int n1)
+        {
+            Console.WriteLine("Escriba una letra:");
+            string letra = Convert.ToString(Console.ReadLine());
+            for (int i = n1; i >= 1; i--)
+            {
+                for (int j = i; j > 0; j--)
+                {
+                    Console.Write(letra);
+                }
+                Console.WriteLine("");
+            }
+
+        }
+    }
+}
+*/
