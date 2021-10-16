@@ -1,0 +1,241 @@
+/*GUIA N°2 - Ejercicios C#*/
+
+/*EJERICIO 01 - Crea un programa que pida al usuario su identificador y su contraseña (ambos
+numéricos), y no le permita seguir hasta que introduzca como identificador "1234" y como
+contraseña "1111".*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int user, password;
+
+            do
+            {
+                Console.WriteLine("Ingrese su número de usuario:");
+                user = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ingrese su contraseña:");
+                password = Convert.ToInt32(Console.ReadLine());
+
+                if (user != 1234 && password != 1111)
+                    Console.WriteLine("El usuario/contraseña es incorrecto.");
+            }
+            while (user != 1234 && password != 1111);
+            Console.WriteLine("¡Bienvenido! {0}",user);
+        }
+    }
+}
+*/
+
+/*EJERICIO 02 - Crea un programa calcule cuantas cifras tiene un número entero positivo (pista: se
+puede hacer dividiendo varias veces entre 10).*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n1;
+            int cifras = 0;
+            Console.WriteLine("Ingrese un numero positivo:");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            while (n1 > 0)
+            {
+                n1 = n1 / 10;
+                cifras ++;
+            }
+            Console.WriteLine("El número ingresado tiene {0}", cifras);
+        }
+    }
+}
+*/
+
+/*EJERICIO 03 - Crea un programa que muestre la tabla de multiplicar del 9.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i < 10; i++)
+                for (int j = 9; j < 10; j++)
+                    Console.WriteLine("{0} x {1} = {2} ", j, i, i * j);
+        }
+    }
+}
+*/
+/*EJERICIO 04 - Crea un programa que contenga un bucle sin fin que muestre los números enteros
+positivos a partir del uno.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i > 0; i++)
+                  Console.WriteLine("{0}",i);
+        }
+    }
+}
+*/
+
+/*EJERICIO 05 - Crea un programa que contenga un bucle sin fin que escriba "Hola " en pantalla, sin
+avanzar de línea.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("HOL");
+            for (int n = 1; n > 0; n++)
+                Console.Write("A");
+        }
+    }
+}
+*/
+
+/*EJERICIO 06 - ¿Cuál sería el resultado de las siguientes operaciones? a=5; b=++a; c=a++; b=b*5;
+a=a*2?Crea un programa que lo resuelva.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            a = 5;
+            b = ++a;
+            c = a++;
+            Console.WriteLine("La resultado de la operación a=5 es: {0}", a);
+            Console.WriteLine("La resultado de la operación b=++a es: {0}", b);
+            Console.WriteLine("La resultado de la operación c=a++ es: {0}", c);
+            Console.WriteLine("La resultado de la operación b=b*5 es: {0}", b*5);
+            Console.WriteLine("La resultado de la operación a=a*2 es: {0}", a*2);
+        }
+    }
+}
+*/
+
+/*EJERICIO 07 - ¿Cuál sería el resultado de las siguientes operaciones? a=5; b=a+2; b-=3; c=-3; c*=2;
+++c; a*=b;? Crea un programa que te lo muestre.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c, bb, cc, aa;
+            a = 5;
+            b = a+2;
+            bb = 3;
+            c = -3;
+            cc = 2;
+            aa = b;
+            Console.WriteLine("La resultado de la operación a=5 es: {0}", a);
+            Console.WriteLine("La resultado de la operación b=a+2 es: {0}", b);
+            Console.WriteLine("La resultado de la operación b-=3 es: {0}", bb);
+            Console.WriteLine("La resultado de la operación c=-3 es: {0}", c);
+            Console.WriteLine("La resultado de la operación c*=2 es: {0}", cc);
+            Console.WriteLine("La resultado de la operación ++c es: {0}", ++c);
+            Console.WriteLine("La resultado de la operación a*=b es: {0}", aa);
+        }
+    }
+}
+*/
+
+/*EJERICIO 08 - Crea un programa que pida una letra al usuario y diga si se trata de una vocal.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string letra;
+            Console.WriteLine("Ingrese una letra del abecedario en miniscula:");
+            letra = (Console.ReadLine());
+            if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u")
+                Console.WriteLine("La letra {0} corresponde a una vocal.", letra);
+            else Console.WriteLine("La letra {0} no corresponde a una vocal.", letra);
+        }
+    }
+}
+*/
+
+/*EJERICIO 09 - Crear un programa que pida al usuario un nombre y una contraseña. La contraseña se
+debe introducir dos veces. Si las dos contraseñas no son iguales, se avisará al usuario y se le
+volverán a pedir las dos contraseñas.*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string user, password1, password2;
+            do
+            {
+                Console.WriteLine("Ingrese un nombre de usuario:");
+                user = (Console.ReadLine());
+                Console.WriteLine("Ingrese una contraseña:");
+                password1 = (Console.ReadLine());
+                Console.WriteLine("Confirme nuevamente la contraseña:");
+                password2 = (Console.ReadLine());
+                if (password1 != password2)
+                    Console.WriteLine("La contraseña ingresada es incorrecta.");
+            }
+            while (password1 != password2);
+            Console.WriteLine("¡Bienvenido! {0}", user);
+        }
+    }
+}
+*/
+
+/*EJERICIO 10 - Crear un programa que pida al usuario su nombre, y le diga "Hola" si se llama
+"Martín", o bien le diga "No te conozco" si teclea otro nombre..*/
+/*
+using System;
+
+namespace Guia02
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombre;
+            Console.WriteLine("Ingrese su nombre:");
+            nombre = (Console.ReadLine());
+            if (nombre== "Martin")
+                Console.WriteLine("¡Hola {0}!", nombre);
+            else Console.WriteLine("Lo siento {0}, no te conozco.", nombre);
+        }
+    }
+}
+*/
