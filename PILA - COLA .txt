@@ -1,0 +1,182 @@
+/*Ejercicio clase: PILA*/
+/*
+using System;
+using System.Collections;
+
+namespace Ejercicios_PILA___COLA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string palabra;
+
+            Stack miPila = new Stack();
+            miPila.Push("Hola");
+            miPila.Push("soy");
+            miPila.Push("yo");
+
+            for (byte i = 0; i < 3; i++)
+            {
+                palabra = (string)miPila.Pop();
+                Console.WriteLine(palabra);
+            }
+        }
+    }
+}
+*/
+
+/*Ejercicio clase: COLA*/
+/*
+using System;
+using System.Collections;
+
+namespace Ejercicios_PILA___COLA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string palabra;
+
+            Queue miCola = new Queue();
+            miCola.Enqueue("Hola");
+            miCola.Enqueue("soy");
+            miCola.Enqueue("yo");
+
+
+            for (byte i = 0; i < 3; i++)
+            {
+                palabra = (string) miCola.Dequeue();
+                Console.WriteLine(palabra);
+            }
+        }
+    }
+}
+*/
+
+
+/*Ejercicio 01: Crea un programa que pida al usuario 6 números enteros y luego los muestre en orden contrario,
+utilizando una pila.*/
+/*
+using System;
+using System.Collections;
+namespace Ejercicios_PILA___COLA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numeros;
+            Console.WriteLine("Ingrese acontinuación 6 digitos numericos");
+            Console.WriteLine("Ingrese el 1 número:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 2 números:");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 3 números:");
+            int n3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 4 números:");
+            int n4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 5 números:");
+            int n5 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 6 números:");
+            int n6 = Convert.ToInt32(Console.ReadLine());
+
+            Stack miPila = new Stack();
+            miPila.Push(n1);
+            miPila.Push(n2);
+            miPila.Push(n3);
+            miPila.Push(n4);
+            miPila.Push(n5);
+            miPila.Push(n6);
+
+            for (byte i = 0; i < 6; i++)
+            {
+                numeros = (int)miPila.Pop();
+                Console.WriteLine(numeros);
+            }
+        }
+    }
+}
+*/
+
+/*Ejercicio 02: Crea un programa que pida al usuario 6 números reales de doble precisión, los guarde en una cola
+y luego los muestre en pantalla.*/
+/*
+using System;
+using System.Collections;
+namespace Ejercicios_PILA___COLA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double numeros;
+            Console.WriteLine("Ingrese acontinuación 6 digitos numericos");
+            Console.WriteLine("Ingrese el 1 número:");
+            double n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 2 números:");
+            double n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 3 números:");
+            double n3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 4 números:");
+            double n4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 5 números:");
+            double n5 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el 6 números:");
+            double n6 = Convert.ToInt32(Console.ReadLine());
+
+            Queue miCola = new Queue();
+            miCola.Enqueue(n1);
+            miCola.Enqueue(n2);
+            miCola.Enqueue(n3);
+            miCola.Enqueue(n4);
+            miCola.Enqueue(n5);
+            miCola.Enqueue(n6);
+
+            for (byte i = 0; i < 6; i++)
+            {
+                numeros = (double) miCola.Dequeue();
+                Console.WriteLine(numeros);
+            }
+        }
+    }
+}
+*/
+
+/*Ejercicio 03: Crea un programa que pida frases al usuario, hasta que introduzca una frase vacía. En ese
+momento, mostrará todas las frases que se habían introducido.*/
+/*
+using System;
+using System.Collections;
+namespace Ejercicios_PILA___COLA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue micola = new Queue();
+            string frases;
+            int contador = 0;
+
+            do
+            {
+                Console.WriteLine("Ingrese una frase:");
+                frases = Convert.ToString(Console.ReadLine());
+
+                micola.Enqueue(frases);
+                contador++;
+
+            } while (frases != "");
+
+            for (int i = 0; i < contador; i++)
+            {
+                frases = (string)micola.Dequeue();
+                Console.WriteLine(frases);
+
+            }
+        }
+        
+    }
+}
+*/
